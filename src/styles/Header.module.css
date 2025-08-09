@@ -1,0 +1,15 @@
+.header {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-left: 0.25rem;
+  height: 2rem;
+}
+
+.logo > img {
+  height: 2rem;
+  border-radius: 5px;
+}

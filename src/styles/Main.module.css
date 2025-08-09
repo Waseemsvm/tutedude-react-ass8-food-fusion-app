@@ -1,0 +1,246 @@
+.hero {
+  background: linear-gradient(rgba(15, 23, 43, 0.9), rgba(15, 23, 43, 0.9)),
+    url("../assets/images/bg-hero.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-cont {
+  padding: 3rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  max-width: 100rem;
+}
+
+.row > .col {
+  width: 50%;
+  padding: 1rem 2.5rem;
+}
+
+.row > .col > p,
+.row > .col > h1 {
+  color: white;
+  animation: slideIn 1s ease-in-out forwards;
+}
+
+.row > .col-1 > h1 {
+  font-size: 4.5rem;
+  margin-bottom: 1rem;
+}
+
+.row > .col-1 > p {
+  font-size: 1.25rem;
+}
+
+.row > .col-2 > img {
+  width: 100%;
+  max-width: 25rem;
+  animation: imgRotate 50s linear infinite;
+}
+
+/* ------------------ FEATURES  ----------------------- */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.feature-card {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding: 0.5rem;
+}
+
+/* ------------------ TESTIMONIALS  ----------------------- */
+.testimonial {
+  margin: 1.5rem;
+  padding: 0 3.5rem;
+}
+
+.testimonial-cont {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-header {
+  text-align: center;
+  position: relative;
+}
+
+.testimonial-header::before {
+  position: absolute;
+  content: "";
+  background-color: black;
+  width: 3rem;
+  height: 2px;
+  top: 0.8rem;
+  left: -3.5rem;
+}
+
+.testimonial-header::after {
+  position: absolute;
+  content: "";
+  background-color: black;
+  width: 3rem;
+  height: 2px;
+  top: 0.8rem;
+  left: 9.5rem;
+}
+
+.testimonial-cont > div {
+  max-width: 50rem;
+}
+
+.testimonial > p:first-child {
+  text-align: left;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.author-name {
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.author-name::before {
+  background: black;
+  height: 0.05rem;
+  width: 2rem;
+  position: relative;
+  display: inline-block;
+  content: "";
+  left: 0;
+  top: -5px;
+  margin-right: 0.5rem;
+}
+
+.author img {
+  border-radius: 50%;
+}
+.author p {
+  margin-left: 1rem;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.team-header {
+  text-align: center;
+  position: relative;
+}
+
+.team-cont {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 1rem;
+  margin-bottom: 3rem;
+}
+
+.teamcard {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.teamcard img {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 15px;
+}
+
+/* ------------------ VIEWPORT < 978PX  ----------------------- */
+
+@media screen and (max-width: 978px) {
+  .row > .col-2 > img {
+    max-width: 20rem;
+  }
+
+  .row > .col-1 > h1 {
+    font-size: 3rem;
+  }
+
+  .row > .col-1 > p {
+    font-size: 1rem;
+  }
+}
+
+/* ------------------ VIEWPORT < 768PX  ----------------------- */
+
+@media screen and (max-width: 768px) {
+  .row > .col {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .row > .col-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-cont {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ------------------ VIEWPORT < 576PX  ----------------------- */
+
+@media screen and (max-width: 576px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .author {
+    flex-direction: column;
+  }
+
+  .author img {
+    margin-bottom: 1rem;
+  }
+
+  .testimonial {
+    padding: 0 1.5rem;
+  }
+
+  .team-cont {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------- animations defn---------------------------- */
+
+@keyframes imgRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translate(-100%);
+  }
+}
