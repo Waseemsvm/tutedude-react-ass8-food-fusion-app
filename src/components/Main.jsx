@@ -119,7 +119,7 @@ export default function Main() {
       <div className={MainStyles["testimonial-cont"]}>
         <h2 className={MainStyles["testimonial-header"]}>Testimonials</h2>
         <ReactLiteCarousel
-          autoPlay={false}
+          autoPlay={true}
           autoPlayInterval={3000}
           btnRounded={true}
           btnArrowColor="white"
