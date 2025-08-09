@@ -27,6 +27,11 @@
   padding: 1rem 2.5rem;
 }
 
+.row > .col > button{
+  margin-top: 1rem;
+  padding: 0.25rem;
+}
+
 .row > .col > p,
 .row > .col > h1 {
   color: white;
@@ -34,12 +39,12 @@
 }
 
 .row > .col-1 > h1 {
-  font-size: 4.5rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
 }
 
 .row > .col-1 > p {
-  font-size: 1.25rem;
+  font-size: 1.0rem;
 }
 
 .row > .col-2 > img {
@@ -147,6 +152,27 @@
 .team-header {
   text-align: center;
   position: relative;
+}
+
+.team-header::before{
+  position: absolute;
+  content: "";
+  width: 3rem;
+  height: 1px;
+  background-color: black;
+  top: 0.75rem;
+  margin-left: -3.5rem;
+  display: inline-block;
+}
+
+.team-header::after{
+  position: absolute;
+  content: "";
+  width: 3rem;
+  height: 1px;
+  background-color: black;
+  top: 0.75rem;
+  margin-left: 0.5rem;
 }
 
 .team-cont {

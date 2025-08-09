@@ -35,6 +35,7 @@ export default function Main() {
                 comfort to your soul. Whether you crave classic favorites or
                 bold new flavors, we've got something for everyone.
               </p>
+              <button>Order Now</button>
             </div>
             <div className={`${MainStyles["col-2"]} ${MainStyles["col"]}`}>
               <img src={heroImg} alt="hero-img" />
@@ -49,8 +50,9 @@ export default function Main() {
           </div>
           <h4>Master Chefs</h4>
           <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla earum
-            ad eaque soluta laboriosam.
+            Our team of seasoned culinary experts brings passion and creativity
+            to every plate. From traditional favorites to innovative fusion
+            dishes, our master chefs ensure every meal is a masterpiece.
           </div>
         </div>
         <div className={MainStyles["feature-card"]}>
@@ -59,9 +61,9 @@ export default function Main() {
           </div>
           <h4>Quality Food</h4>
           <div>
-            {" "}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla earum
-            ad eaque soluta laboriosam.
+            At Food Fusion, quality isn’t just a promise — it’s a standard. We
+            source the freshest ingredients, prepare every dish with care, and
+            make sure each bite delivers a burst of flavor and satisfaction.
           </div>
         </div>
         <div className={MainStyles["feature-card"]}>
@@ -70,8 +72,10 @@ export default function Main() {
           </div>
           <h4>Online Order</h4>
           <div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla earum
-            ad eaque soluta laboriosam.
+            With just a few clicks, your next delicious meal is on its way. Our
+            easy-to-use online ordering system ensures a smooth experience,
+            letting you browse, customize, and place your order without a
+            hassle.
           </div>
         </div>
         <div className={MainStyles["feature-card"]}>
@@ -80,15 +84,16 @@ export default function Main() {
           </div>
           <h4>24/7 Service</h4>
           <div>
-            {" "}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla earum
-            ad eaque soluta laboriosam.
+            No matter the time — early morning cravings, midnight hunger, or a
+            lazy Sunday afternoon — Food Fusion is here for you around the
+            clock. Our kitchens never sleep, so you can enjoy your favorite
+            meals anytime you want.
           </div>
         </div>
       </div>
       <div className={MainStyles["team"]}>
         <h2 className={MainStyles["team-header"]}>Team Members</h2>
-        <div className={MainStyles['team-cont']}>
+        <div className={MainStyles["team-cont"]}>
           <TeamCard
             img={chef1}
             name={"Chef Arjun Kapoor"}

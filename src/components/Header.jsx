@@ -7,9 +7,11 @@ export default function Header() {
         <img src={logo} alt="" />
       </div>
       <div>
-        <ul>
+        <ul className={HeaderStyles["nav-items"]}>
           <li>Home</li>
           <li>Menu</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
         </ul>
       </div>
     </nav>
