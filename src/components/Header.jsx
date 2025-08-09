@@ -3,7 +3,27 @@ import logo from "../assets/images/food_fusion_logo.jpg";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router";
 export default function Header() {
+  const menu = [
+    {
+      id: "home",
+      text: "Home",
+    },
+    {
+      id: "menu",
+      text: "Menu",
+    },
+    {
+      id: "aboutus",
+      text: "About Us",
+    },
+    {
+      id: "contactus",
+      text: "Contact Us",
+    },
+  ];
+
   return (
     <nav className={HeaderStyles.header}>
       <div className={HeaderStyles.logo}>
@@ -14,18 +34,22 @@ export default function Header() {
       </div>
       <div className={HeaderStyles["nav-cont"]}>
         <ul className={HeaderStyles["nav-items"]}>
-          <li>
-            <a href="">Home</a>
-          </li>
-          <li>
-            <a href="">Menu</a>
-          </li>
-          <li>
-            <a href="">About Us</a>
-          </li>
-          <li>
-            <a href="">Contact Us</a>
-          </li>
+          {menu.map((item) => (
+            <li key={item.id}>
+              <NavLink
+                to={item.id}
+                style={({ isActive }) => {
+                  if (!isActive) return;
+                  return {
+                    backgroundColor: "black",
+                    color: "white",
+                  };
+                }}
+              >
+                {item.text}
+              </NavLink>
+            </li>
+          ))}
         </ul>
         <span className={HeaderStyles["cart-btn"]}>
           <FontAwesomeIcon icon={faCartShopping} />
