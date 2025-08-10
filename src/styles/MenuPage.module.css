@@ -1,3 +1,14 @@
+.toolbar{
+  height: 2.5rem;
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.toolbar input{
+  height: 1.5rem;
+}
+
 .page {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
