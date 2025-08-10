@@ -65,6 +65,21 @@
   justify-content: center;
   width: 3rem;
   cursor: pointer;
+  position: relative;
+  --cart-item-count: 0;
+}
+
+.cart-btn.cart-btn-items-avl::after {
+  /* content: calc("" + var(--cart-item-count)); */
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: red;
+  display: block;
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  border-radius: 50%;
 }
 
 .cart-btn:hover {

@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { setLoading } from "./loaderSlice";
+import axios from "axios";
 
 const menuSlice = createSlice({
   name: "menu",
@@ -9,7 +10,7 @@ const menuSlice = createSlice({
     setItems: (state, action) => {
       state = action.payload;
       return state;
-    }
+    },
   },
 });
 
@@ -18,7 +19,11 @@ export function fetchItems() {
   return async function (dispatch) {
     try {
       dispatch(setLoading(true));
-      let items = (await import("../data/food_fusion.json")).default;
+      // let items = (await import("../data/food_fusion.json")).default;
+      let response = await axios.get(
+        "https://faux-api.com/serve/items_140533165"
+      );
+      const items = response.data.result;
       dispatch(setItems(items));
       dispatch(setLoading(false));
     } catch (err) {

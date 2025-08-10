@@ -19,8 +19,10 @@ import chef1 from "../assets/images/team-1.jpg";
 import chef2 from "../assets/images/team-2.jpg";
 import chef3 from "../assets/images/team-3.jpg";
 import chef4 from "../assets/images/team-4.jpg";
+import { useNavigate } from "react-router";
 
 export default function HomePage() {
+  const navigate = useNavigate();
   return (
     <div>
       <div className={HomePageStyles.hero}>
@@ -37,7 +39,9 @@ export default function HomePage() {
                 comfort to your soul. Whether you crave classic favorites or
                 bold new flavors, we've got something for everyone.
               </p>
-              <button>Order Now</button>
+              <button onClick={e => {
+                navigate("menu")
+              }}>Order Now</button>
             </div>
             <div
               className={`${HomePageStyles["col-2"]} ${HomePageStyles["col"]}`}

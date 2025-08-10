@@ -91,8 +91,8 @@
 .add-to-cart-btn {
   cursor: pointer;
   padding: 0.25rem;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,18 +101,49 @@
   font-size: 1.25rem;
   background-color: black;
   color: white;
+  margin-top: -1rem;
 }
 
-.add-to-cart-btn:active,
+.add-to-cart-btn:hover,
 .add-to-cart-btn:active {
   cursor: pointer;
-  background-color: white;
-  color: black;
+  background-color: rgb(59, 56, 56);
+  color: white;
 }
 
 .rupee-symbol {
   height: 0.75rem;
   width: 0.75rem;
+}
+
+.item-counter {
+  width: 5rem;
+  height: 2rem;
+  margin-top: 0.5rem;
+}
+.item-counter-btn {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: none;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+.item-counter-btn:hover,
+.item-counter-btn:active {
+  cursor: pointer;
+  background-color: rgb(59, 56, 56);
+  color: white;
+}
+
+.item-counter-disp {
+  width: 1.5rem;
+  display: inline-block;
+  text-align: center;
 }
 
 @media screen and (max-width: 1200px) {

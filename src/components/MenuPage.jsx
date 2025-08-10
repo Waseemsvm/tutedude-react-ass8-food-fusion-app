@@ -12,15 +12,9 @@ export default function MenuPage() {
     dispatch(fetchItems());
   }, []);
 
-  console.log(items);
-
   return (
     <div>
       <div className={MenuPageStyles.page}>
-        {/* {Array.from({ length: 30 }).map((i, idx) => (
-          <MenuItem key={idx} />
-        ))} */}
-
         {items.map((item) => (
           <MenuItem key={item.id} item={item} />
         ))}

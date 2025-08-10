@@ -4,6 +4,8 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, useNavigate } from "react-router";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 export default function Header() {
   const menu = [
     {
@@ -25,6 +27,16 @@ export default function Header() {
   ];
 
   const navigate = useNavigate();
+  const items = useSelector((state) => state.cart.items);
+  const count = items.reduce((o, e) => {
+    o += e.quantity;
+    return o;
+  }, 0);
+
+  // useEffect(e => {
+  //   let el = document.querySelector(`.${HeaderStyles["cart-btn-items-avl"]}`);
+  //   if(el) el
+  // }, [count])
 
   return (
     <nav className={HeaderStyles.header}>
@@ -54,7 +66,9 @@ export default function Header() {
           ))}
         </ul>
         <span
-          className={HeaderStyles["cart-btn"]}
+          className={`${HeaderStyles["cart-btn"]} ${
+            count && HeaderStyles["cart-btn-items-avl"]
+          }`}
           onClick={(e) => {
             navigate("cart");
           }}
