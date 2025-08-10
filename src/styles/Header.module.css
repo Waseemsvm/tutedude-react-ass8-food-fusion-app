@@ -96,6 +96,20 @@
   width: 100%;
 }
 
+.deliver-to {
+  height: 100%;
+  display: flex;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+  padding: 0.2rem;
+  align-items: center;
+}
+
+.deliver-to span:nth-child(2) {
+  margin-left: 0.35rem;
+  color: brown;
+}
+
 @media screen and (max-width: 768px) {
   .nav-items {
     display: none;
@@ -116,11 +130,19 @@
   }
 
   .isOpen li {
-    height:3rem;
+    height: 3rem;
   }
 
-  .isOpen li a{
+  .isOpen li a {
     width: 100%;
+  }
+
+  .deliver-to {
+    flex-direction: column;
+  }
+
+  .deliver-to span:nth-child(2) {
+    margin-left: -0.75rem;
   }
 }
 

@@ -47,6 +47,10 @@ export default function Header() {
           <FontAwesomeIcon icon={isMenuOpen ? faXmark : faBars} />
         </span>
         <img src={logo} alt="" />
+        <div className={HeaderStyles["deliver-to"]}>
+          <span>Delivering to</span>
+          <span className={HeaderStyles["deliver-to-loc"]}>Bangalore</span>
+        </div>
       </div>
       <div className={`${HeaderStyles["nav-cont"]}`}>
         <ul
@@ -80,6 +84,7 @@ export default function Header() {
               count && HeaderStyles["cart-btn-items-avl"]
             }`}
             onClick={(e) => {
+              // if (window.visualViewport.width > 768) navigate("cart");
               navigate("cart");
             }}
           >
