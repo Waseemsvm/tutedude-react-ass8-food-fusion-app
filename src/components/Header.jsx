@@ -3,11 +3,11 @@ import logo from "../assets/images/food_fusion_logo.jpg";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 export default function Header() {
   const menu = [
     {
-      id: "home",
+      id: "",
       text: "Home",
     },
     {
@@ -23,6 +23,8 @@ export default function Header() {
       text: "Contact Us",
     },
   ];
+
+  const navigate = useNavigate();
 
   return (
     <nav className={HeaderStyles.header}>
@@ -51,7 +53,12 @@ export default function Header() {
             </li>
           ))}
         </ul>
-        <span className={HeaderStyles["cart-btn"]}>
+        <span
+          className={HeaderStyles["cart-btn"]}
+          onClick={(e) => {
+            navigate("cart");
+          }}
+        >
           <FontAwesomeIcon icon={faCartShopping} />
         </span>
       </div>

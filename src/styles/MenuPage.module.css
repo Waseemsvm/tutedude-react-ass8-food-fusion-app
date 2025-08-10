@@ -1,0 +1,153 @@
+.page {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.menu-item {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  width: 100%;
+  height: 15rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+
+.menu-item:hover {
+  scale: 1.05;
+}
+
+.menu-item .img-cont {
+  height: 10rem;
+  width: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.item-img {
+  height: 8rem;
+  width: 12rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 13px 27px -5px #32325d40, 0 8px 16px -8px #0000004d,
+    0 -6px 16px -6px #00000008;
+  max-width: 100%;
+}
+
+.slideup-item {
+  animation: slideUp 0.5s linear forwards;
+}
+
+.veg-item-symbol {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5rem;
+}
+
+.item-details-cont {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.item-title,
+.item-desc {
+  width: 100%;
+  text-align: left;
+  padding: 0.12rem 1rem;
+  font-size: 0.75rem;
+}
+
+.item-title {
+  font-weight: bold;
+}
+
+.item-desc {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 14rem;
+}
+
+.item-price-cont {
+  display: flex;
+  height: 1.5rem;
+  justify-content: space-between;
+  padding: 0.12rem 1rem;
+  font-size: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.add-to-cart-btn {
+  cursor: pointer;
+  padding: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.25rem;
+  background-color: black;
+  color: white;
+}
+
+.add-to-cart-btn:active,
+.add-to-cart-btn:active {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+.rupee-symbol {
+  height: 0.75rem;
+  width: 0.75rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .page {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .page {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
