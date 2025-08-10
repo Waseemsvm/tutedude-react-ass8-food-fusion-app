@@ -66,17 +66,34 @@
   margin-top: 0.5rem;
 }
 
-.chk-btn-cont {
-}
 .chk-btn-cont button {
   margin: 0.5rem 0.5rem;
   padding: 0.25rem;
   cursor: pointer;
 }
 
-/* .chk-btn-cont button{
+.empty-cart-img-cont {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.empty-cart-img-cont button {
+  margin: 2rem;
+  padding: 0.5rem;
+}
+
+.empty-cart-img-cont h2 {
+  margin: 2.5rem;
+}
+
+.empty-cart-img-cont img {
+  height: 15rem;
   width: 15rem;
-} */
+  opacity: 0.5;
+}
 
 @media screen and (max-width: 576px) {
   .item-desc,
