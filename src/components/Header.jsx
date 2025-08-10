@@ -1,11 +1,11 @@
 import HeaderStyles from "../styles/Header.module.css";
 import logo from "../assets/images/food_fusion_logo.jpg";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, useNavigate } from "react-router";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useState } from "react";
 export default function Header() {
   const menu = [
     {
@@ -33,21 +33,27 @@ export default function Header() {
     return o;
   }, 0);
 
-  // useEffect(e => {
-  //   let el = document.querySelector(`.${HeaderStyles["cart-btn-items-avl"]}`);
-  //   if(el) el
-  // }, [count])
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <nav className={HeaderStyles.header}>
       <div className={HeaderStyles.logo}>
-        <span className={HeaderStyles.menu}>
-          <FontAwesomeIcon icon={faBars} />
+        <span
+          className={HeaderStyles.menu}
+          onClick={(e) => {
+            setIsMenuOpen(!isMenuOpen);
+          }}
+        >
+          <FontAwesomeIcon icon={isMenuOpen ? faXmark : faBars} />
         </span>
         <img src={logo} alt="" />
       </div>
-      <div className={HeaderStyles["nav-cont"]}>
-        <ul className={HeaderStyles["nav-items"]}>
+      <div className={`${HeaderStyles["nav-cont"]}`}>
+        <ul
+          className={`${HeaderStyles["nav-items"]}  ${
+            isMenuOpen && HeaderStyles.isOpen
+          }`}
+        >
           {menu.map((item) => (
             <li key={item.id}>
               <NavLink
@@ -59,22 +65,27 @@ export default function Header() {
                     color: "white",
                   };
                 }}
+                onClick={(e) => {
+                  setIsMenuOpen(false);
+                }}
               >
                 {item.text}
               </NavLink>
             </li>
           ))}
         </ul>
-        <span
-          className={`${HeaderStyles["cart-btn"]} ${
-            count && HeaderStyles["cart-btn-items-avl"]
-          }`}
-          onClick={(e) => {
-            navigate("cart");
-          }}
-        >
-          <FontAwesomeIcon icon={faCartShopping} />
-        </span>
+        {isMenuOpen || (
+          <span
+            className={`${HeaderStyles["cart-btn"]} ${
+              count && HeaderStyles["cart-btn-items-avl"]
+            }`}
+            onClick={(e) => {
+              navigate("cart");
+            }}
+          >
+            <FontAwesomeIcon icon={faCartShopping} />
+          </span>
+        )}
       </div>
     </nav>
   );
