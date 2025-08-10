@@ -95,6 +95,18 @@
   opacity: 0.5;
 }
 
+.table .cart-itm {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.table .checkout-det td {
+  padding-top: 2rem;
+}
+
+.checkout-det-itm > td:first-child {
+  padding-left: 1rem;
+}
+
 @media screen and (max-width: 576px) {
   .item-desc,
   .item-title {

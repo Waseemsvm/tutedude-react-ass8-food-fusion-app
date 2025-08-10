@@ -23,11 +23,15 @@ export default function MenuPage() {
           }}
         />
       </div>
-      <div className={MenuPageStyles.page}>
-        {items.map((item) => (
-          <MenuItem key={item.id} item={item} />
-        ))}
-      </div>
+      {items.length ? (
+        <div className={MenuPageStyles.page}>
+          {items.map((item) => (
+            <MenuItem key={item.id} item={item} />
+          ))}
+        </div>
+      ) : (
+        <div className={MenuPageStyles["menu-empty"]}>No Items Here</div>
+      )}
     </div>
   );
 }

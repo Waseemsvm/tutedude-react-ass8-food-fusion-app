@@ -10,7 +10,7 @@ export default function CartItem({ id }) {
   );
 
   return (
-    <tr>
+    <tr className={CartPageStyles["cart-itm"]}>
       <td>
         <div className={CartPageStyles["item-det"]}>
           <div className={CartPageStyles["img-cont"]}>

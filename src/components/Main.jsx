@@ -5,6 +5,7 @@ import AboutPage from "./AboutPage";
 import ContactPage from "./ContactPage";
 import CartPage from "./CartPage";
 import MenuPage from "./MenuPage";
+import CheckoutPage from "./CheckoutPage";
 
 export default function Main() {
   return (
@@ -13,7 +14,11 @@ export default function Main() {
       <Route path="/menu" element={<MenuPage />} />
       <Route path="/aboutus" element={<AboutPage />} />
       <Route path="/contactus" element={<ContactPage />} />
-      <Route path="/cart" element={<CartPage />} />
+      <Route path="/cart">
+        <Route index element={<CartPage />} />
+        <Route path="checkout" element={<CheckoutPage />} />
+      </Route>
+      {/* <Route path="/cart" element={<CartPage />} /> */}
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

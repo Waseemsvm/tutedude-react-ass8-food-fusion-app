@@ -34,7 +34,9 @@ export default function CartPage() {
             {cartItems.map((item) => (
               <CartItem id={item.id} key={item.id} />
             ))}
-            <tr>
+            <tr
+              className={`${CartPageStyles["checkout-det-itm"]}  ${CartPageStyles["checkout-det"]}`}
+            >
               <td>SubTotal</td>
               <td></td>
               <td>
@@ -45,7 +47,7 @@ export default function CartPage() {
                 {subTotal ?? 0}
               </td>
             </tr>
-            <tr>
+            <tr className={`${CartPageStyles["checkout-det-itm"]}`}>
               <td>Shipping Charge</td>
               <td></td>
               <td>
@@ -56,7 +58,7 @@ export default function CartPage() {
                 {shipCharge}
               </td>
             </tr>
-            <tr>
+            <tr className={CartPageStyles["checkout-det-itm"]}>
               <td>Discount</td>
               <td></td>
               <td>
@@ -67,7 +69,7 @@ export default function CartPage() {
                 {discount}%
               </td>
             </tr>
-            <tr>
+            <tr className={CartPageStyles["checkout-det-itm"]}>
               <td>Tax</td>
               <td></td>
               <td>
@@ -78,7 +80,7 @@ export default function CartPage() {
                 {tax}%
               </td>
             </tr>
-            <tr>
+            <tr className={CartPageStyles["checkout-det-itm"]}>
               <td>Total</td>
               <td></td>
               <td>
@@ -89,11 +91,18 @@ export default function CartPage() {
                 {grandTotal}
               </td>
             </tr>
-            <tr>
+            <tr className={CartPageStyles["checkout-det-itm"]}>
               <td></td>
               <td></td>
               <td className={CartPageStyles["chk-btn-cont"]}>
-                <button>Checkout</button>
+                <button
+                  onClick={(e) => {
+                    localStorage.setItem("grandTotal", grandTotal);
+                    navigate("checkout");
+                  }}
+                >
+                  Checkout
+                </button>
               </td>
             </tr>
           </tbody>

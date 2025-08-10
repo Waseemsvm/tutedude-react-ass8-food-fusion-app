@@ -1,11 +1,11 @@
-.toolbar{
+.toolbar {
   height: 2.5rem;
   display: flex;
   justify-content: flex-end;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-.toolbar input{
+.toolbar input {
   height: 1.5rem;
 }
 
@@ -14,6 +14,13 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   padding: 1rem;
+}
+
+.menu-empty {
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-item {
