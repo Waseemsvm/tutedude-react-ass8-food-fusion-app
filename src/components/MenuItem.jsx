@@ -7,6 +7,7 @@ import rupeeSymbol from "../assets/images/rupee.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../redux/CartSlice";
 import ItemCounter from "./ItemCounter";
+import { Rating } from "react-simple-star-rating";
 
 export default function MenuItem({ item }) {
   // let src = image;
@@ -41,6 +42,11 @@ export default function MenuItem({ item }) {
               alt=""
             />{" "}
             {price}
+            <Rating
+              className={MenuPageStyles.rating}
+              initialValue={item.rating}
+              readonly
+            />
           </p>
           {!cartItem ? (
             <button

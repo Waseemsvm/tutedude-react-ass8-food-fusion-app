@@ -109,6 +109,11 @@
   margin-bottom: 0.25rem;
 }
 
+.item-price-cont p {
+  display: flex;
+  align-items: center;
+}
+
 .add-to-cart-btn {
   cursor: pointer;
   padding: 0.25rem;
@@ -167,6 +172,11 @@
   text-align: center;
 }
 
+.rating {
+  zoom: 0.3;
+  margin-left: 1rem;
+}
+
 @media screen and (max-width: 1200px) {
   .page {
     grid-template-columns: repeat(4, 1fr);
@@ -191,9 +201,8 @@
   }
 
   .toolbar input {
-    width:  100%;
+    width: 100%;
   }
-
 }
 
 @keyframes slideUp {
