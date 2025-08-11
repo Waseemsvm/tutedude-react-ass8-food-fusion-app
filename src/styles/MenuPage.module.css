@@ -7,6 +7,9 @@
 
 .toolbar input {
   height: 1.5rem;
+  margin: 0.25rem 1.5rem;
+  padding: 0.5rem;
+  font-size: 0.75rem;
 }
 
 .page {
@@ -186,6 +189,11 @@
   .page {
     grid-template-columns: 1fr;
   }
+
+  .toolbar input {
+    width:  100%;
+  }
+
 }
 
 @keyframes slideUp {

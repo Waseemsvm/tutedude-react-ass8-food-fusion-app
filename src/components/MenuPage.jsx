@@ -16,6 +16,7 @@ export default function MenuPage() {
     <div>
       <div className={MenuPageStyles.toolbar}>
         <input
+          className={MenuPageStyles["search-field"]}
           type="text"
           placeholder="Search Here"
           onChange={(e) => {

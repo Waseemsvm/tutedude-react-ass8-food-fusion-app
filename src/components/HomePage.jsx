@@ -39,9 +39,13 @@ export default function HomePage() {
                 comfort to your soul. Whether you crave classic favorites or
                 bold new flavors, we've got something for everyone.
               </p>
-              <button onClick={e => {
-                navigate("menu")
-              }}>Order Now</button>
+              <button
+                onClick={(e) => {
+                  navigate("menu");
+                }}
+              >
+                Order Now
+              </button>
             </div>
             <div
               className={`${HomePageStyles["col-2"]} ${HomePageStyles["col"]}`}
@@ -53,33 +57,33 @@ export default function HomePage() {
       </div>
       <div className={HomePageStyles.features}>
         <div className={HomePageStyles["feature-card"]}>
-          <div>
+          <div className={HomePageStyles["feature-icon"]}>
             <FontAwesomeIcon icon={faUserTie} />
           </div>
-          <h4>Master Chefs</h4>
-          <div>
+          <h4 className={HomePageStyles["feature-head"]}>Master Chefs</h4>
+          <div className={HomePageStyles["feature-cont"]}>
             Our team of seasoned culinary experts brings passion and creativity
             to every plate. From traditional favorites to innovative fusion
             dishes, our master chefs ensure every meal is a masterpiece.
           </div>
         </div>
         <div className={HomePageStyles["feature-card"]}>
-          <div>
+          <div className={HomePageStyles["feature-icon"]}>
             <FontAwesomeIcon icon={faUtensils} />
           </div>
-          <h4>Quality Food</h4>
-          <div>
-            At Food Fusion, quality isn’t just a promise — it’s a standard. We
+          <h4 className={HomePageStyles["feature-head"]}>Quality Food</h4>
+          <div className={HomePageStyles["feature-cont"]}>
+            At Food Fusion, quality isn't just a promise — it's a standard. We
             source the freshest ingredients, prepare every dish with care, and
             make sure each bite delivers a burst of flavor and satisfaction.
           </div>
         </div>
         <div className={HomePageStyles["feature-card"]}>
-          <div>
+          <div className={HomePageStyles["feature-icon"]}>
             <FontAwesomeIcon icon={faCartPlus} />
           </div>
-          <h4>Online Order</h4>
-          <div>
+          <h4 className={HomePageStyles["feature-head"]}>Online Order</h4>
+          <div className={HomePageStyles["feature-cont"]}>
             With just a few clicks, your next delicious meal is on its way. Our
             easy-to-use online ordering system ensures a smooth experience,
             letting you browse, customize, and place your order without a
@@ -87,11 +91,11 @@ export default function HomePage() {
           </div>
         </div>
         <div className={HomePageStyles["feature-card"]}>
-          <div>
+          <div className={HomePageStyles["feature-icon"]}>
             <FontAwesomeIcon icon={faHeadset} />
           </div>
-          <h4>24/7 Service</h4>
-          <div>
+          <h4 className={HomePageStyles["feature-head"]}>24/7 Service</h4>
+          <div className={HomePageStyles["feature-cont"]}>
             No matter the time — early morning cravings, midnight hunger, or a
             lazy Sunday afternoon — Food Fusion is here for you around the
             clock. Our kitchens never sleep, so you can enjoy your favorite

@@ -10,8 +10,13 @@ import faTwitter from "../assets/images/twitter-brands-solid-full.svg";
 import faLinkedIn from "../assets/images/linkedin-brands-solid-full.svg";
 import faYouTube from "../assets/images/youtube-brands-solid-full.svg";
 import faFacebook from "../assets/images/facebook-brands-solid-full.svg";
+import { toast } from "react-toastify";
 
 export default function Footer() {
+  const notify = () => toast.success("You are now subscribed!!", {
+    autoClose: 800
+  });
+
   return (
     <div>
       <div className={FooterStyles["main-cont"]}>
@@ -63,13 +68,24 @@ export default function Footer() {
         </div>
         <div className={FooterStyles.col}>
           <h6>Newsletter</h6>
-          <form>
-            <input type="email" placeholder="Subscribe Now" />
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              notify();
+            }}
+          >
+            <input
+              type="email"
+              placeholder="Subscribe Now"
+              className={FooterStyles.newsletter}
+            />
             <button type="submit">Go</button>
           </form>
         </div>
       </div>
-      <p className={FooterStyles.copy}>@Copy Waseem Akram P, All Rights Reserved</p>
+      <p className={FooterStyles.copy}>
+        @Copy Waseem Akram P, All Rights Reserved
+      </p>
     </div>
   );
 }
