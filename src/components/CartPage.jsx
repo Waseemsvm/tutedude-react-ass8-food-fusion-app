@@ -96,6 +96,7 @@ export default function CartPage() {
               <td></td>
               <td className={CartPageStyles["chk-btn-cont"]}>
                 <button
+                  className={CartPageStyles["chk-btn"]}
                   onClick={(e) => {
                     localStorage.setItem("grandTotal", grandTotal);
                     navigate("checkout");

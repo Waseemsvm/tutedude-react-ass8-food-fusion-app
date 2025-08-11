@@ -13,9 +13,10 @@ import faFacebook from "../assets/images/facebook-brands-solid-full.svg";
 import { toast } from "react-toastify";
 
 export default function Footer() {
-  const notify = () => toast.success("You are now subscribed!!", {
-    autoClose: 800
-  });
+  const notify = () =>
+    toast.success("You are now subscribed!!", {
+      autoClose: 800,
+    });
 
   return (
     <div>
@@ -72,12 +73,16 @@ export default function Footer() {
             onSubmit={(e) => {
               e.preventDefault();
               notify();
+              if (document.querySelector("#newsletter"))
+                document.querySelector("#newsletter").value = "";
             }}
           >
             <input
+              id="newsletter"
               type="email"
               placeholder="Subscribe Now"
               className={FooterStyles.newsletter}
+              required
             />
             <button type="submit">Go</button>
           </form>

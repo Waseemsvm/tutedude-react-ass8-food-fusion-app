@@ -1,10 +1,16 @@
 import { useNavigate } from "react-router";
 import CheckoutPageStyle from "../styles/CheckoutPage.module.css";
 import { useEffect, useState } from "react";
+import rupeeSymbol from "../assets/images/rupee.svg";
+import { toast } from "react-toastify";
 
 export default function CheckoutPage() {
   const navigate = useNavigate();
   const [grandTotal, setGrandTotal] = useState(0);
+  const notifySuccess = () =>
+    toast.success("Order placed successfully", {
+      autoClose: 800,
+    });
 
   useEffect((e) => {
     let total = parseFloat(localStorage.getItem("grandTotal"));
@@ -25,20 +31,25 @@ export default function CheckoutPage() {
   const isCvvValid = () => formData["credit-cvv"]?.length == 3;
 
   return (
-    <div>
-      <h1>Checkout Page</h1>
-      <div>{grandTotal}</div>
+    <div className={CheckoutPageStyle["checkout-page"]}>
+      <h3>Checkout Page</h3>
+      <div className={CheckoutPageStyle["total-disp"]}>
+        <p>
+          Proceed to pay: <embed src={rupeeSymbol} type="" /> {grandTotal}
+        </p>
+        <p>Select the checkout options below:</p>
+      </div>
 
       <form
         action=""
         className={CheckoutPageStyle.form}
         onSubmit={(e) => {
           e.preventDefault();
-          console.log(formData);
-          // dispatch(resetCart());
-          // dispatch(filterItems());
-          // navigate("/catalogue");
-          // showMessageToast(true);
+
+          if (e.nativeEvent.submitter.id === "order") {
+            notifySuccess();
+          }
+          navigate("/");
         }}
       >
         <div className={CheckoutPageStyle["form-body"]}>
@@ -77,7 +88,7 @@ export default function CheckoutPage() {
             </div>
           </div>
 
-          {formData.paymentMode === "cc" && (
+          {formData.paymentMode === "cc" ? (
             <div
               className={`${CheckoutPageStyle["credit-card-form"]} ${
                 formData.paymentMode == "cc" ? "" : CheckoutPageStyle.hide
@@ -168,31 +179,52 @@ export default function CheckoutPage() {
                     : "Please Enter you Credit Card CVV. Expected 3 digits"}
                 </p>
               </div>
+              <div className={CheckoutPageStyle["form-btn-cont"]}>
+                <button id="order">Order Now</button>
+                <button
+                  onClick={(e) => {
+                    navigate("/cart");
+                  }}
+                >
+                  Go back to Cart
+                </button>
+                <button
+                  onClick={(e) => {
+                    navigate("/menu");
+                  }}
+                >
+                  Keep Shopping
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className={CheckoutPageStyle["form-btn-cont"]}>
+              <button
+                id="order"
+                onClick={(e) => {
+                  navigate("/");
+                }}
+              >
+                Order Now
+              </button>
+              <button
+                onClick={(e) => {
+                  navigate("/cart");
+                }}
+              >
+                Go back to Cart
+              </button>
+              <button
+                onClick={(e) => {
+                  navigate("/menu");
+                }}
+              >
+                Keep Shopping
+              </button>
             </div>
           )}
-
-          <button className={CheckoutPageStyle["order-btn"]} type="submit">
-            Order Now
-          </button>
-          <button
-            className={CheckoutPageStyle["order-btn"]}
-            type="reset"
-            onClick={(e) => {
-              navigate("/cart");
-            }}
-          >
-            Keep Shopping
-          </button>
         </div>
       </form>
-
-      {/* <button
-        onClick={(e) => {
-          navigate("/cart");
-        }}
-      >
-        Keep Shopping
-      </button> */}
     </div>
   );
 }

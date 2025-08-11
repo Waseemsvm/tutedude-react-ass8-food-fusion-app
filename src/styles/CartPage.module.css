@@ -21,15 +21,6 @@
   font-size: 0.75rem;
 }
 
-.item-title {
-}
-.item-desc {
-  /* width: 15rem;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden; */
-}
-
 .img-cont {
   height: 5rem;
   width: 7.5rem;
@@ -105,6 +96,18 @@
 
 .checkout-det-itm > td:first-child {
   padding-left: 1rem;
+}
+
+.chk-btn {
+  background-color: orange;
+  border: none;
+  border-radius: 5px;
+  padding: 0.25rem;
+  font-size: 1rem;
+}
+
+.chk-btn:hover {
+  background-color: rgb(221, 195, 145);
 }
 
 @media screen and (max-width: 576px) {
