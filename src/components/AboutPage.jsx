@@ -1,8 +1,10 @@
+import AboutPageStyles from "../styles/AboutPage.module.css";
+
 export default function AboutPage() {
   return (
-    <div>
-      <div>
-        <h1>About Us</h1>
+    <div className={AboutPageStyles.container}>
+      <h1>About Us</h1>
+      <div className={AboutPageStyles.section}>
         <p>
           At Food Fusion, we believe that food is more than just a meal — it's
           an experience. Our mission is to bring together flavors from across
@@ -11,7 +13,9 @@ export default function AboutPage() {
           a delightful dinner, we promise every bite will leave you wanting
           more.
         </p>
-        <h1>Our Story</h1>
+      </div>
+      <div className={AboutPageStyles.section}>
+        <h3>Our Story</h3>
         <p>
           It all started with a simple idea — to blend traditional recipes with
           modern cooking styles. What began as a small home kitchen experiment
@@ -20,15 +24,19 @@ export default function AboutPage() {
           tell a story. From farm-fresh ingredients to unique flavor
           combinations, every plate is designed to be memorable.
         </p>
-        <h1>Our Values</h1>
+      </div>
+      <div className={AboutPageStyles.section}>
+        <h3>Our Values</h3>
         <p>
           Quality First - We source only the freshest and highest-quality
           ingredients. Innovation in Every Bite - Blending cuisines and
           techniques to create unforgettable flavors. Customer Delight - Serving
           with warmth, care, and a smile, every time.
         </p>
+      </div>
 
-        <h1>Why Choose Us?</h1>
+      <div className={AboutPageStyles.section}>
+        <h3>Why Choose Us?</h3>
         <p>
           Fresh Ingredients Daily - Straight from the market to your plate.
           Authentic & Fusion Dishes - A mix of local and global flavors. Cozy

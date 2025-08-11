@@ -46,10 +46,17 @@ export default function CheckoutPage() {
         onSubmit={(e) => {
           e.preventDefault();
 
+          if (e.nativeEvent.submitter.id === "keep_shopping") {
+            navigate("/menu");
+          }
+          if (e.nativeEvent.submitter.id === "go_cart") {
+            navigate("/cart");
+          }
+
           if (e.nativeEvent.submitter.id === "order") {
             notifySuccess();
+            navigate("/");
           }
-          navigate("/");
         }}
       >
         <div className={CheckoutPageStyle["form-body"]}>
@@ -182,6 +189,7 @@ export default function CheckoutPage() {
               <div className={CheckoutPageStyle["form-btn-cont"]}>
                 <button id="order">Order Now</button>
                 <button
+                  id="go_cart"
                   onClick={(e) => {
                     navigate("/cart");
                   }}
@@ -189,6 +197,7 @@ export default function CheckoutPage() {
                   Go back to Cart
                 </button>
                 <button
+                  id="keep_shopping"
                   onClick={(e) => {
                     navigate("/menu");
                   }}
@@ -208,6 +217,7 @@ export default function CheckoutPage() {
                 Order Now
               </button>
               <button
+                id="go_cart"
                 onClick={(e) => {
                   navigate("/cart");
                 }}
@@ -215,6 +225,7 @@ export default function CheckoutPage() {
                 Go back to Cart
               </button>
               <button
+                id="keep_shopping"
                 onClick={(e) => {
                   navigate("/menu");
                 }}

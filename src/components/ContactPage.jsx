@@ -1,8 +1,10 @@
+import ContactPageStyles from "../styles/ContactPage.module.css";
+
 export default function ContactPage() {
   return (
-    <div>
-      <h1>Get in Touch with Food Fusion</h1>
-      <p>
+    <div className={ContactPageStyles.container}>
+      <h3>Get in Touch with Food Fusion</h3>
+      <p className={ContactPageStyles.intro}>
         We'd love to hear from you! Whether you have a question about our menu,
         want to place an order, or just want to share your feedback, our team is
         here to help. Your satisfaction is our top priority.
@@ -21,15 +23,32 @@ export default function ContactPage() {
       </ul>
       <div>
         <p>
-          If you’d like to reach us online, simply fill out our contact form and
-          we’ll respond as soon as possible.
+          If you'd like to reach us online, simply fill out our contact form and
+          we'll respond as soon as possible.
         </p>
-        <div>Full Name (required)</div>
-        <div>Email Address (required)</div>
-        <div>Phone Number (optional)</div>
-        <div>Subject (required)</div>
-        <div>Message (required)</div>
-        <button>Send Message</button>
+        <form action="">
+          <div>
+            <label htmlFor="">Full Name: </label>
+            <input />
+          </div>
+          <div>
+            <label htmlFor="">Email Address: </label>
+            <input />
+          </div>
+          <div>
+            <label htmlFor="">Phone Number: </label>
+            <input />
+          </div>
+          <div>
+            <label htmlFor="">Subject: </label>
+            <input />
+          </div>
+          <div>
+            <label htmlFor="">Message: </label>
+            <input />
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
       </div>
     </div>
   );
