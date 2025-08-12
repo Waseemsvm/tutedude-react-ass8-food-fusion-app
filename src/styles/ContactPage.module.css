@@ -4,3 +4,87 @@
   padding: 1.5rem;
   margin: 1.5rem;
 }
+
+.contact-info {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.container {
+  font-size: 0.75rem;
+}
+
+.contact-info li {
+  list-style-type: none;
+  margin: 0.5rem;
+}
+
+.intro {
+  margin: 1rem 0.5rem;
+}
+
+.contact-info-cont {
+  padding: 0.25rem;
+}
+
+.contact-info-cont button {
+  margin-top: 1rem;
+  padding: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.contact-info-header {
+  margin: 1rem 0.5rem;
+  font-weight: bold;
+}
+
+.contact-info-form {
+  margin: 0.5rem;
+}
+
+.contact-info-form > div {
+  margin: 0.5rem 0rem;
+  display: flex;
+  align-items: start;
+}
+
+.contact-info-form > div > label {
+  min-width: 6rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.contact-info-form > div > input {
+  padding: 0.25rem;
+  background-color: azure;
+  border: 0.5px solid brown;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 576px) {
+  .contact-info {
+    margin: 0.25rem;
+    padding: 0.5rem;
+  }
+
+  .contact-info strong {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .container h1{
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .contact-info-form > div > label {
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-info-form > div{
+    flex-direction: column;
+  }
+}

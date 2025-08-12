@@ -3,7 +3,7 @@ import AboutPageStyles from "../styles/AboutPage.module.css";
 export default function AboutPage() {
   return (
     <div className={AboutPageStyles.container}>
-      <h1>About Us</h1>
+      <h2>About Us</h2>
       <div className={AboutPageStyles.section}>
         <p>
           At Food Fusion, we believe that food is more than just a meal — it's
@@ -27,22 +27,40 @@ export default function AboutPage() {
       </div>
       <div className={AboutPageStyles.section}>
         <h3>Our Values</h3>
-        <p>
-          Quality First - We source only the freshest and highest-quality
-          ingredients. Innovation in Every Bite - Blending cuisines and
-          techniques to create unforgettable flavors. Customer Delight - Serving
-          with warmth, care, and a smile, every time.
-        </p>
+        <ul>
+          <li>
+            {" "}
+            <strong> Quality First</strong> - We source only the freshest and
+            highest-quality ingredients.{" "}
+          </li>
+          <li>
+            <strong>Innovation in Every Bite</strong> - Blending cuisines and
+            techniques to create unforgettable flavors.
+          </li>
+          <li>
+            <strong>Customer Delight</strong> - Serving with warmth, care, and a
+            smile, every time.
+          </li>
+        </ul>
       </div>
 
       <div className={AboutPageStyles.section}>
         <h3>Why Choose Us?</h3>
-        <p>
-          Fresh Ingredients Daily - Straight from the market to your plate.
-          Authentic & Fusion Dishes - A mix of local and global flavors. Cozy
-          Ambience - Perfect for family dinners, romantic dates, or friendly
-          get-togethers.
-        </p>
+        <ul>
+          <li>
+            {" "}
+            <strong> Fresh Ingredients Daily</strong> - Straight from the market
+            to your plate.
+          </li>
+          <li>
+            <strong>Authentic & Fusion Dishes</strong> - A mix of local and
+            global flavors.
+          </li>
+          <li>
+            <strong>Cozy Ambience</strong> - Perfect for family dinners,
+            romantic dates, or friendly get-togethers.
+          </li>
+        </ul>
       </div>
     </div>
   );
