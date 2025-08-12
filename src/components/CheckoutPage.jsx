@@ -3,9 +3,12 @@ import CheckoutPageStyle from "../styles/CheckoutPage.module.css";
 import { useEffect, useState } from "react";
 import rupeeSymbol from "../assets/images/rupee.svg";
 import { toast } from "react-toastify";
+import { removeAllItems } from "../redux/CartSlice";
+import { useDispatch } from "react-redux";
 
 export default function CheckoutPage() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [grandTotal, setGrandTotal] = useState(0);
   const notifySuccess = () =>
     toast.success("Order placed successfully", {
@@ -54,6 +57,7 @@ export default function CheckoutPage() {
           }
 
           if (e.nativeEvent.submitter.id === "order") {
+            dispatch(removeAllItems());
             notifySuccess();
             navigate("/");
           }
