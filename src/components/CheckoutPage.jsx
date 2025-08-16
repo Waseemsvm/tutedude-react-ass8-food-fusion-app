@@ -177,7 +177,7 @@ export default function CheckoutPage() {
                   required
                   type="number"
                   minLength={3}
-                  max={3}
+                  maxLength={3}
                   onChange={(e) => {
                     setFormData({
                       ...formData,
