@@ -175,8 +175,9 @@ export default function CheckoutPage() {
                   placeholder="Enter CVV"
                   value={formData["credit-cvv"]}
                   required
+                  type="number"
                   minLength={3}
-                  maxLength={3}
+                  max={3}
                   onChange={(e) => {
                     setFormData({
                       ...formData,
